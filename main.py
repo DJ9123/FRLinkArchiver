@@ -1,7 +1,6 @@
 import os
 import re
 import praw
-import secrets
 from imgurpython import ImgurClient
 
 # ignoredWords = ["w2c"]
