@@ -18,11 +18,13 @@ comment_body = "**Retrieved the following links from Imgur:**\n\n{urls}\n\n*****
 
 class FRLinkArchiver:
     def __init__(self, bot_name):
-        self.praw = praw.Reddit(client_id=os.environ.get('reddit_client_id'),
-                                client_secret=os.environ.get("reddit_client_secret"),
-                                password=os.environ.get('reddit_password'),
-                                user_agent="FRLinkArchiver by /u/Yezzos",
-                                username=os.environ.get('reddit_username'))
+        self.reddit = praw.Reddit(
+            client_id=os.environ.get('reddit_client_id'),
+            client_secret=os.environ.get("reddit_client_secret"),
+            password=os.environ.get('reddit_password'),
+            user_agent="FRLinkArchiver by /u/Yezzos",
+            username=os.environ.get('reddit_username')
+        )
 
         self.imgur = ImgurClient(os.environ.get('imgur_client_id'), os.environ.get('imgur_client_secret'))
         self.links = []
