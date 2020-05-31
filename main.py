@@ -33,7 +33,7 @@ class FRLinkArchiver:
     def main(self):
         subreddit = self.reddit.subreddit(subreddits)
         for submission in subreddit.stream.submissions(skip_existing=True):
-            print("got a new one!")
+            print("got a new one!", submission)
             self.process_submission(submission)
             if len(self.links):
                 comment = comment_body.format(urls="\n\n".join(self.links))
